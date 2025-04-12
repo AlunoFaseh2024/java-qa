@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private SecurityConfigurations securityConfig;
     public User criar(User dto) {
-        dto.setPassword((new BCryptPasswordEncoder()).encode(dto.getPassword()));;
+        dto.setPassword((new BCryptPasswordEncoder()).encode(dto.getPassword()));
         return repository.save(dto);
     }
 

@@ -1,0 +1,46 @@
+# CRIAR USUÁRIO
+POST http://127.0.0.1:8080/auth/user
+Content-Type: application/json
+accept: */*
+{"email":"rafael@faseh.edu.br","nome":"rafael","password":"123"}
+
+###
+
+# CRIAR USUÁRIO NULO
+POST http://127.0.0.1:8080/auth/user
+Content-Type: application/json
+accept: */*
+{"email":"","nome":"","password":""}
+
+###
+
+# LOGIN
+POST http://127.0.0.1:8080/auth
+Content-Type: application/json
+accept: */*
+{"email":"rafael@faseh.edu.br","password":"123"}
+
+HTTP/1.1 200  - OK
+vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+content-type: application/json
+transfer-encoding: chunked
+date: Sun, 13 Apr 2025 00:26:35 GMT
+connection: close
+
+###
+
+# TENTAR RECUPERAR USUÁRIOS
+GET http://127.0.0.1:8080/user
+accept: */*
+
+HTTP/1.1 403  - Forbidden
+vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: 0
+x-frame-options: DENY
+content-length: 0
+date: Sun, 13 Apr 2025 00:30:20 GMT
+connection: close
